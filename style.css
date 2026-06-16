@@ -222,7 +222,7 @@ nav#nav ul li a:hover::after { width: 100%; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('img/meat_hero.jpg');
+  background-image: url('img/sugata_sashimi.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
@@ -258,6 +258,13 @@ nav#nav ul li a:hover::after { width: 100%; }
 
 /* ===== MENU ===== */
 .menu-section { background: var(--warm); }
+.menu-intro {
+  max-width: 820px;
+  margin: 0 auto 32px;
+  text-align: center;
+  font-size: .97rem;
+  color: #4a4540;
+}
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -292,6 +299,81 @@ nav#nav ul li a:hover::after { width: 100%; }
   font-weight: 700;
   color: var(--accent);
   margin-top: 10px;
+}
+
+/* ===== COURSE ===== */
+.course-section {
+  background: var(--bg);
+}
+.course-intro,
+.course-note {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  color: #4a4540;
+}
+.course-intro {
+  font-size: .98rem;
+  margin-bottom: 32px;
+}
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.course-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 24px;
+  text-align: center;
+}
+.course-card h4 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.course-card p {
+  color: #4a4540;
+  font-size: .94rem;
+}
+.course-card p + p {
+  margin-top: 8px;
+}
+.course-note {
+  font-size: .92rem;
+  margin-bottom: 24px;
+}
+.course-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.course-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-size: .92rem;
+  font-weight: 700;
+  transition: transform .2s, opacity .2s, background .2s;
+}
+.course-btn:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+}
+.course-btn-primary {
+  background: var(--accent);
+  color: var(--white);
+}
+.course-btn-secondary {
+  background: var(--dark);
+  color: var(--white);
 }
 
 /* ===== GALLERY ===== */
@@ -443,6 +525,7 @@ footer p { font-size: .85rem; margin-bottom: 4px; }
 @media (max-width: 1024px) {
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .course-grid { grid-template-columns: 1fr; }
   .gallery-track .slide { min-width: 50%; }
 }
 
@@ -469,6 +552,11 @@ footer p { font-size: .85rem; margin-bottom: 4px; }
   .concept-img img { height: 260px; }
   .feature-grid { grid-template-columns: 1fr 1fr; }
   .menu-grid { grid-template-columns: 1fr; }
+  .menu-intro,
+  .course-intro,
+  .course-note { text-align: left; }
+  .course-card { padding: 24px 18px; }
+  .course-actions { flex-direction: column; }
 
   /* Gallery: 1 slide per view on mobile */
   .gallery-track .slide { min-width: 100%; }

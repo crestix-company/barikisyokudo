@@ -6,6 +6,28 @@ if (header) {
   });
 }
 
+// Hero slideshow
+const heroSlides = document.querySelectorAll('.hero-slideshow .hero-bg');
+if (heroSlides.length > 1) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let currentHeroSlide = 0;
+
+  const showHeroSlide = (index) => {
+    heroSlides.forEach((slide, slideIndex) => {
+      slide.classList.toggle('is-active', slideIndex === index);
+    });
+  };
+
+  showHeroSlide(currentHeroSlide);
+
+  if (!prefersReducedMotion) {
+    window.setInterval(() => {
+      currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+      showHeroSlide(currentHeroSlide);
+    }, 5200);
+  }
+}
+
 // Hamburger menu
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
